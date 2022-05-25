@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{margin: 150px 0 0 500px;}
+        #wrapper{margin-top: 20px;}
+        #box{width: 300px;height: 300px;
+        background-color: red;
+        border: 2px solid blue;}
+        input{width: 100px; height: 50px;}
+    </style>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            //객체선언
+            var control = $('#control');
+            var showBtn = control.find('input').eq(0);
+            var hideBtn = control.find('input').eq(1);
+            var box = $('#wrapper #box');
+            // showBtn.clink(function(){
+            //     box.show();//display:block
+            // })
+            // hideBtn.click(function(){
+            //     box.hide()//display:none
+            // });
+            $('.btn').click(function(){
+                $('#box').toggle(500);
+              })
+              //toggle(시간) 클릭시 show상태면 hide가 되고 다시 클릭했을 시에는 지금상태의 반대가 적용 
+        })
+    </script>
+</head>
+<body>
+    <div id="control">
+        <input type="button" value="show" class="btn"/>
+    </div>
+    <div id="wrapper">
+        <div id="box">
+
+        </div>
+    </div>
+</body>
+</html>

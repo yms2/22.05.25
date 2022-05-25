@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{margin: 150px 0 0 500px;}
+        #box{width: 150px;height: 150px;
+        background-color: red;
+        border: 2px solid blue;
+        position: absolute; left:200px}
+    </style>
+    <script src="./js/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.big').click(function(){
+                //animate() -> $(대상).animate({속성:속성값 ,속성:속성값}, 시간);
+                $('#box').delay(1000).animate({width:'400px',height:'400px',opacity:0.6}, 1000);
+            })
+
+            $('.small').click(function(){
+                $('#box').animate({width:'50px',height:'50px',opacity:0.1}, 600);
+            })
+
+            $('.left').click(function(){
+                $('#box').stop().animate({left:0},3000);
+            })
+
+            $('.right').click(function(){
+                $('#box').stop().animate({left:'100%'});
+            
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="control">
+        <input type="button" value="크고 불투명하게" class="big"/>
+        <input type="button" value="작고 투명하게" class="small"/>
+        <input type="button" value="왼쪽으로 이동" class="left"/>
+        <input type="button" value="오른쪽으로 이동" class="right"/>
+    </div>
+        <div id="box"></div>
+</body>
+</html>
